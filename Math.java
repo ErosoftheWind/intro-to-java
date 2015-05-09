@@ -2,7 +2,7 @@
 public class Math {
 	
 	private int[] values;
-	private int result = 0;
+	private double result = 0;
 
 	public Math(){
 		this.values = new int[5];
@@ -18,7 +18,7 @@ public class Math {
 	public int[] getValues(){
 		return values;
 	}
-	public int getResult(){
+	public double getResult(){
 		return result;
 	}
 	public void setValues(int[] x){
@@ -34,18 +34,37 @@ public class Math {
 	/*
 	 * Method that returns the sum of X and Y
 	 */
-	public int add(){
+	public double add(){
 		this.result = 0;
 		for(int i = 0; i < this.values.length; i++){
-			this.result = this.result + this.values[i];
+			this.result += this.values[i];
 		}
 		return this.result;
 	}
-	public int subtract(){
+	public double subtract(){
 		this.result = 0;
 		for(int i = 0; i < this.values.length; i++){
-			this.result = this.result - this.values[i];
+			this.result -= this.values[i];
 		}
 		return this.result;
+	}
+	public double multiply(){
+		this.result = this.values[0];
+		for(int i = 1; i < this.values.length; i++){
+			this.result *= this.values[i];
+		}
+		return this.result;
+	}
+	public double divide(){
+		this.result = this.values[0];
+		try {
+			for(int i = 1; i < this.values.length; i++){
+				this.result /= this.values[i];
+			}
+			return this.result;
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+			return this.result = 0;
+		}
 	}
 }
