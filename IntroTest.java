@@ -1,7 +1,7 @@
 
 public class IntroTest {
 	public static void main(String args[]){
-		Intro test = new Intro();
+		Inheritence test = new Inheritence("hello","justin",5);
 		test.print();
 	}
 }
