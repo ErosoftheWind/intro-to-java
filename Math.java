@@ -21,6 +21,19 @@ public class Math {
 	public double getResult(){
 		return result;
 	}
+	public int getValue(int pos){
+		try {
+			return values[pos];
+		} catch (Exception e){
+			System.out.println(e.getMessage());
+			return 0;
+		}
+	}
+	
+	public void setValue(int pos, int newValue){
+		this.values[pos] = newValue;
+	}
+	
 	public void setValues(int[] x){
 		this.values = x;
 	}
