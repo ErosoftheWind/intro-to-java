@@ -1,41 +1,51 @@
 
 public class Math {
 	
-	private int X;
-	private int Y;
+	private int[] values;
+	private int result = 0;
 
 	public Math(){
-		this.X = 1;
-		this.Y = 2;
+		this.values = new int[5];
+		for(int i = 0; i < values.length; i++){
+			values[i] = i;
+		}
 	}
 	
-	public Math(int a, int b){
-		this.X = a;
-		this.Y = b;
+	public Math(int[] a){
+		this.values = a;
 	}
 	
-	public int getX(){
-		return X;
+	public int[] getValues(){
+		return values;
 	}
-	public int getY(){
-		return Y;
+	public int getResult(){
+		return result;
 	}
-	public void setX(int X){
-		this.X = X;
+	public void setValues(int[] x){
+		this.values = x;
 	}
-	public void setY(int Y){
-		this.Y = Y;
-	}
+
 	public void print(){
-		System.out.println(this.Y + " " + this.X);
+		for(int i = 0; i < this.values.length; i++){
+			System.out.print(this.values[i] + " ");
+		}
+		System.out.println("\n" + this.result);
 	}
 	/*
 	 * Method that returns the sum of X and Y
 	 */
 	public int add(){
-		return this.X + this.Y;
+		this.result = 0;
+		for(int i = 0; i < this.values.length; i++){
+			this.result = this.result + this.values[i];
+		}
+		return this.result;
 	}
 	public int subtract(){
-		return this.X - this.Y;
+		this.result = 0;
+		for(int i = 0; i < this.values.length; i++){
+			this.result = this.result - this.values[i];
+		}
+		return this.result;
 	}
 }
