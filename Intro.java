@@ -18,6 +18,10 @@ public class Intro {
 		this.message = message;
 	}
 	
+	public void print(){
+		
+	}
+	
 	public static void main(String args[]){
 		Intro x = new Intro();
 		System.out.println(x.getMessage());
@@ -25,7 +29,7 @@ public class Intro {
 		System.out.println(y.getMessage());
 		x.setMessage("Lets have fun");
 		System.out.println(x.getMessage());
-
+		
 	}
 
 }
